@@ -2,6 +2,16 @@
 
 Drive Snapshot Backup Wrapper mit Differential-Rotation, Multi-Disk-Support und API-Reporting.
 
+## Wichtige Warnungen
+
+**ACHTUNG: Dieses Script loescht Dateien und Ordner!**
+
+Das Script entfernt im Rahmen der Retention-Policy automatisch alte Backup-Zyklen. Dies umfasst das unwiderrufliche Loeschen von Verzeichnissen und allen darin enthaltenen Dateien. Stellen Sie sicher, dass Sie die Konfiguration verstanden haben, bevor Sie das Script ausfuehren.
+
+**Backup-Laufwerke ausschliesslich fuer Backups verwenden!**
+
+Die konfigurierten Backup-Laufwerke sollten ausschliesslich fuer SnapControl-Backups genutzt werden. Speichern Sie keine anderen Daten auf diesen Laufwerken. Das Script verwaltet den Speicherplatz aktiv und loescht Daten basierend auf der Retention-Konfiguration. Andere Dateien auf dem Backup-Laufwerk koennten versehentlich die Speicherplatz-Berechnung beeinflussen oder im schlimmsten Fall bei manuellen Aufraeum-Aktionen verloren gehen.
+
 ## Features
 
 - Automatische Vollbackup/Differential-Rotation
@@ -202,6 +212,20 @@ Die eigentliche Backup-Art (full/differential) ist in der JSON unter `backup.typ
 | Nicht genuegend Speicherplatz | `--cleanup` ausfuehren, `keep_cycles` reduzieren |
 | Hash-Datei nicht gefunden | Neues Vollbackup wird automatisch erstellt |
 | API-Upload fehlgeschlagen | Token und Endpoint pruefen |
+
+## Haftungsausschluss
+
+DIE SOFTWARE WIRD "WIE SIE IST" OHNE JEGLICHE GEWAEHRLEISTUNG BEREITGESTELLT, WEDER AUSDRUECKLICH NOCH STILLSCHWEIGEND, EINSCHLIESSLICH, ABER NICHT BESCHRAENKT AUF DIE GEWAEHRLEISTUNG DER MARKTGAENGIGKEIT, DER EIGNUNG FUER EINEN BESTIMMTEN ZWECK UND DER NICHTVERLETZUNG VON RECHTEN DRITTER.
+
+DIE AUTOREN ODER URHEBERRECHTSINHABER SIND IN KEINEM FALL HAFTBAR FUER ANSPRUECHE, SCHAEDEN ODER ANDERE VERBINDLICHKEITEN, OB IN EINER VERTRAGS- ODER HAFTUNGSKLAGE, EINER UNERLAUBTEN HANDLUNG ODER ANDERWEITIG, DIE SICH AUS, AUS ODER IN VERBINDUNG MIT DER SOFTWARE ODER DER NUTZUNG ODER ANDEREN GESCHAEFTEN MIT DER SOFTWARE ERGEBEN.
+
+Die Nutzung dieser Software erfolgt auf eigenes Risiko. Der Benutzer ist allein verantwortlich fuer:
+- Die korrekte Konfiguration der Backup-Parameter
+- Die Ueberpruefung der Backup-Integritaet
+- Die Sicherstellung ausreichender Speicherkapazitaet
+- Regelmaessige Tests der Wiederherstellbarkeit
+
+Es wird dringend empfohlen, die `--dry-run` Option zu verwenden, bevor Aenderungen an der Konfiguration produktiv eingesetzt werden.
 
 ## Lizenz
 
