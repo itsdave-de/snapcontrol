@@ -1,0 +1,36 @@
+# Configuration with secrets
+config.json
+
+# Logs
+logs/
+*.log
+*.json.log
+
+# Drive Snapshot executable (proprietary)
+snapshot.exe
+snapshot64.exe
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+ENV/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+nul
+
+# Backup state (machine-specific)
+backup_state.json

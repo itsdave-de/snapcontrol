@@ -1,0 +1,33 @@
+{
+    "snapshot_exe": "snapshot.exe",
+    "source_drive": "D:",
+    "hostname": null,
+    "max_differential_backups": 6,
+    "verify_after_backup": false,
+    "target_disks": [
+        {
+            "id": "backup-disk-01",
+            "name": "Backup Disk 1",
+            "base_path": "Backups"
+        },
+        {
+            "id": "backup-disk-02",
+            "name": "Backup Disk 2",
+            "base_path": "Backups"
+        }
+    ],
+    "disk_id_filename": ".backup_disk_id",
+    "retention": {
+        "keep_cycles": 3,
+        "space_reserve_percent": 50
+    },
+    "log_settings": {
+        "log_dir": "logs",
+        "keep_logs_days": 90
+    },
+    "api_settings": {
+        "enabled": false,
+        "endpoint": "https://your-api.example.com/api/v1/backup",
+        "token": "YOUR_API_TOKEN"
+    }
+}
